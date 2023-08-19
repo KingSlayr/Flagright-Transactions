@@ -1,5 +1,8 @@
 # Flagright-Transactions
 
+![image](https://github.com/KingSlayr/Flagright-Transactions/assets/55028717/a2c86d30-9954-4888-99c1-eb3806369897)
+
+
 <h2>API Endpoints</h2>
 
 <h3>1. Create a New Transaction</h3>
