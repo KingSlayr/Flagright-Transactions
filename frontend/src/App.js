@@ -4,18 +4,18 @@ import Dashboard from "./Dashboard.js";
 import { loginApi } from "./apiCalls/loginApi";
 
 function App() {
-  const [JWTtoken, setJWTtoken] = useState("")
+  const [JWTtoken, setJWTtoken] = useState();
   useEffect(() => {
-    loginApi().then(res=>{
-      const t='Bearer '+res?.token
+    loginApi().then((res) => {
+      const t = "Bearer " + res?.token;
       setJWTtoken(t);
-    })
-  }, [])
-  
+    });
+  }, []);
+
   return (
     <div className="App">
       <h1>Flagright</h1>
-      <Dashboard JWTtoken={JWTtoken}/>
+      {JWTtoken&&<Dashboard JWTtoken={JWTtoken}/>}
     </div>
   );
 }

@@ -14,7 +14,7 @@ import { startCronJob, stopCronJob } from "./apiCalls/cronControlApi";
 import TransactionReportResult from "./components/TransactionReportResult";
 import JsonToCsvConverter from "./components/JsonToCsvConverter";
 
-function Dashboard({JWTtoken}) {
+function Dashboard({ JWTtoken }) {
   const [transactions, setTransactions] = useState([]);
   const [totalPage, settotalPage] = useState(0);
   const [currentPage, setcurrentPage] = useState(0);
@@ -43,8 +43,7 @@ function Dashboard({JWTtoken}) {
 
   // Add a new transaction
   const handleAddTransaction = (newTransaction) => {
-    addTransaction(JWTtoken,newTransaction);
-    window.location.reload();
+    addTransaction(JWTtoken, newTransaction);
   };
 
   // Generate a report
@@ -69,7 +68,7 @@ function Dashboard({JWTtoken}) {
   };
 
   useEffect(() => {
-    getTransactions(JWTtoken,filters).then((res) => {
+    getTransactions(JWTtoken, filters).then((res) => {
       setTransactions(res?.transactions);
       settotalPage(res?.totalPages);
       setcurrentPage(res?.currentPage);
@@ -77,13 +76,13 @@ function Dashboard({JWTtoken}) {
   }, []);
 
   useEffect(() => {
-    getTransactions(JWTtoken,filters, currentPage).then((res) => {
+    getTransactions(JWTtoken, filters, currentPage).then((res) => {
       setTransactions(res?.transactions);
     });
   }, [currentPage, filters]);
 
   useEffect(() => {
-    getTransactions(JWTtoken,filters).then((res) => {
+    getTransactions(JWTtoken, filters).then((res) => {
       setTransactions(res?.transactions);
       settotalPage(res?.totalPages);
       setcurrentPage(res?.currentPage);
@@ -92,7 +91,7 @@ function Dashboard({JWTtoken}) {
 
   useEffect(() => {
     if (reportDuration) {
-      generateReport(JWTtoken,reportDuration).then((res) => {
+      generateReport(JWTtoken, reportDuration).then((res) => {
         settransactionReport(res);
         setshowtransactionReport(true);
       });

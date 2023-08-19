@@ -1,7 +1,7 @@
 import { baseUrl } from "../config";
 
 export const addTransaction = async (JWTtoken,newTransaction) => {
-  console.log(newTransaction);
+  console.log(JWTtoken);
   try {
     const response = await fetch(`${baseUrl}/transactions/create`, {
       method: "POST",
