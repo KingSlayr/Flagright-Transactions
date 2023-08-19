@@ -1,9 +1,9 @@
-import { JWTtoken } from "../config";
+import { baseUrl } from "../config";
 
-export const startCronJob = async () => {
+export const startCronJob = async (JWTtoken) => {
   try {
     const response = await fetch(
-      "http://localhost:3000/transactions/cron/start",
+      `${baseUrl}/transactions/cron/start`,
       {
         method: "POST",
         headers: {
@@ -25,10 +25,10 @@ export const startCronJob = async () => {
   }
 };
 
-export const stopCronJob = async () => {
+export const stopCronJob = async (JWTtoken) => {
   try {
     const response = await fetch(
-      "http://localhost:3000/transactions/cron/stop",
+      `${baseUrl}/transactions/cron/stop`,
       {
         method: "POST",
         headers: {

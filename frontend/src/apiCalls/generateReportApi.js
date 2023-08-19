@@ -1,10 +1,10 @@
-import { JWTtoken } from "../config";
+import { baseUrl } from "../config";
 import { buildURLWithFilters } from "../generateUrlFromFilters";
 
-export const generateReport = async (reportCriteria) => {
+export const generateReport = async (JWTtoken,reportCriteria) => {
   try {
     const url = buildURLWithFilters(
-      "http://localhost:3000/transactions/report",
+      `${baseUrl}/transactions/report`,
       reportCriteria
     );
     const response = await fetch(url, {

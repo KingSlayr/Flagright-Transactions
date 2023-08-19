@@ -1,10 +1,10 @@
-import { JWTtoken } from "../config";
+import { baseUrl } from "../config";
 import { buildURLWithFilters } from "../generateUrlFromFilters";
 
-export const getTransactions = async (filters, page = 1, sortOption) => {
+export const getTransactions = async (JWTtoken,filters, page = 1, sortOption) => {
   try {
     const url = buildURLWithFilters(
-      "http://localhost:3000/transactions/search",
+      `${baseUrl}/transactions/search`,
       filters,
       page
     );

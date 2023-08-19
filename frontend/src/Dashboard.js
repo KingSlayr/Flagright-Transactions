@@ -14,7 +14,7 @@ import { startCronJob, stopCronJob } from "./apiCalls/cronControlApi";
 import TransactionReportResult from "./components/TransactionReportResult";
 import JsonToCsvConverter from "./components/JsonToCsvConverter";
 
-function Dashboard() {
+function Dashboard({JWTtoken}) {
   const [transactions, setTransactions] = useState([]);
   const [totalPage, settotalPage] = useState(0);
   const [currentPage, setcurrentPage] = useState(0);
@@ -43,7 +43,7 @@ function Dashboard() {
 
   // Add a new transaction
   const handleAddTransaction = (newTransaction) => {
-    addTransaction(newTransaction);
+    addTransaction(JWTtoken,newTransaction);
     window.location.reload();
   };
 
@@ -54,13 +54,13 @@ function Dashboard() {
 
   // Start the cron job
   const handleStartCron = () => {
-    startCronJob();
+    startCronJob(JWTtoken);
     setIsCronRunning(true);
   };
 
   // Stop the cron job
   const handleStopCron = () => {
-    stopCronJob();
+    stopCronJob(JWTtoken);
     setIsCronRunning(false);
   };
 
@@ -69,7 +69,7 @@ function Dashboard() {
   };
 
   useEffect(() => {
-    getTransactions(filters).then((res) => {
+    getTransactions(JWTtoken,filters).then((res) => {
       setTransactions(res?.transactions);
       settotalPage(res?.totalPages);
       setcurrentPage(res?.currentPage);
@@ -77,13 +77,13 @@ function Dashboard() {
   }, []);
 
   useEffect(() => {
-    getTransactions(filters, currentPage).then((res) => {
+    getTransactions(JWTtoken,filters, currentPage).then((res) => {
       setTransactions(res?.transactions);
     });
   }, [currentPage, filters]);
 
   useEffect(() => {
-    getTransactions(filters).then((res) => {
+    getTransactions(JWTtoken,filters).then((res) => {
       setTransactions(res?.transactions);
       settotalPage(res?.totalPages);
       setcurrentPage(res?.currentPage);
@@ -92,7 +92,7 @@ function Dashboard() {
 
   useEffect(() => {
     if (reportDuration) {
-      generateReport(reportDuration).then((res) => {
+      generateReport(JWTtoken,reportDuration).then((res) => {
         settransactionReport(res);
         setshowtransactionReport(true);
       });
@@ -106,7 +106,7 @@ function Dashboard() {
   };
   window.addEventListener("unload", function () {
     if (!isCronRunning) return;
-    stopCronJob();
+    stopCronJob(JWTtoken);
     setIsCronRunning(false);
   });
 

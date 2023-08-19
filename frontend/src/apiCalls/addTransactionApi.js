@@ -1,9 +1,9 @@
-import { JWTtoken } from "../config";
+import { baseUrl } from "../config";
 
-export const addTransaction = async (newTransaction) => {
+export const addTransaction = async (JWTtoken,newTransaction) => {
   console.log(newTransaction);
   try {
-    const response = await fetch("http://localhost:3000/transactions/create", {
+    const response = await fetch(`${baseUrl}/transactions/create`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
