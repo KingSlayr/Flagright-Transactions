@@ -45,3 +45,8 @@ const AddTransaction = ({ onAdd }) => {
 };
 
 export default AddTransaction;
+
+// This React component, `AddTransaction`, provides a form for adding a transaction. It allows the user
+// to input an amount and a description, and when the "Add Transaction" button is clicked, it sends this
+//  data to a parent component through the `onAdd` prop. The component generates a transaction ID, clears
+//   the input fields, and provides a simple user interface for adding transactions.

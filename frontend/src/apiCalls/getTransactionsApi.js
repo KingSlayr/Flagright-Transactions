@@ -26,3 +26,8 @@ export const getTransactions = async (filters, page = 1, sortOption) => {
     throw error;
   }
 };
+
+// This code defines an asynchronous function, `getTransactions`, which retrieves transactions by sending a
+//  GET request to a server. It constructs the request URL based on provided filters, page number, and includes
+//  JWT token-based authorization.
+// Errors during the request are logged and thrown for handling.

@@ -25,3 +25,7 @@ export const generateReport = async (reportCriteria) => {
     throw error;
   }
 };
+
+// This code defines an asynchronous function, `generateReport`, which generates a report by
+//  sending a GET request to a server. It builds the request URL based on provided criteria, includes
+//  JWT token-based authorization, and handles responses with appropriate error logging and handling.

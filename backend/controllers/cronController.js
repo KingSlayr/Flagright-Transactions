@@ -24,3 +24,15 @@ export const stopCronJob = () => {
     cronJob.stop();
   }
 };
+
+// This code defines a cron job using the "node-cron" library to periodically create new
+//  transactions at fixed intervals.
+
+// - `startCronJob`: Initiates the cron job to run every second (`"*/1 * * * * *"`).
+//   - It generates a new transaction with a random amount and a description.
+//   - Then, it calls the `createTransactionService` function to create the transaction.
+
+// - `stopCronJob`: Stops the cron job if it's running.
+
+// The cron job is set up to generate transactions at regular intervals, simulating automated
+//  transaction creation.

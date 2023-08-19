@@ -23,3 +23,8 @@ function TransactionReportResult({
 }
 
 export default TransactionReportResult;
+
+
+// The `TransactionReportResult` component in React displays a transaction report's result.
+//  It includes the report's date range, the number of transactions, and the total transaction
+//   amount. Users can close the report with an "X" button.

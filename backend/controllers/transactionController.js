@@ -59,3 +59,8 @@ export const generateTransactionReport = async (req, res) => {
     res.status(500).json({ error: error.message });
   }
 };
+
+// These API controller functions manage transactions: `createTransaction` creates a new transaction,
+//  `getTransaction` retrieves a specific one, `searchTransactions` searches and sorts transactions with pagination,
+//   and `generateTransactionReport` generates reports. They handle errors with appropriate status codes and messages
+//    for client feedback.

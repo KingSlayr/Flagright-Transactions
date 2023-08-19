@@ -23,3 +23,7 @@ export const addTransaction = async (newTransaction) => {
     throw error;
   }
 };
+
+// This code defines an asynchronous function, `addTransaction`, which sends a POST request to a local
+// server to create a transaction. It includes headers for authentication using a JWT token. If successful,
+// it returns the response data; otherwise, it handles and logs errors.

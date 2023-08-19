@@ -49,3 +49,12 @@ export const stopCronJob = async () => {
     throw error;
   }
 };
+
+// This code exports two asynchronous functions, `startCronJob` and `stopCronJob`, both responsible for interacting
+//  with a server to control a cron job. They send HTTP POST requests to specific endpoints on `localhost:3000`,
+//   utilizing JSON data and JWT token-based authorization.
+
+// The `startCronJob` function initiates a cron job, while `stopCronJob` halts it. They handle responses, returning data
+// if successful or throwing an error if the operation fails. Any errors encountered during these processes are logged
+// to the console, and the respective error is thrown for further handling. These functions provide control over cron job
+//  management within the specified server environment, with appropriate error handling and authorization.

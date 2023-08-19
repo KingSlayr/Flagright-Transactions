@@ -52,3 +52,9 @@ const TransactionFilter = ({ onFilter }) => {
 };
 
 export default TransactionFilter;
+
+// The `TransactionFilter` component in React provides a user interface for filtering transactions based
+//  on various criteria. It allows the user to input a start date, an end date, a minimum amount, and
+//  a maximum amount. When the "Apply Filters" button is clicked, it sends this filter criteria to a parent
+//  component through the `onFilter` prop. The component offers a straightforward and intuitive interface
+//  for specifying filter conditions for transactions within a React application.

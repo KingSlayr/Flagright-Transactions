@@ -30,3 +30,11 @@ export const downloadCSV = (jsonData) => {
   a.click();
   document.body.removeChild(a);
 };
+
+// The `downloadCSV` function takes an array of JSON objects, converts them into a CSV format, and
+// initiates a download. It does this by:
+// - Mapping each JSON object to a CSV row.
+// - Adding a header row with property names.
+// - Creating a CSV string by joining rows with line breaks.
+// - Creating a Blob object with the CSV data.
+// - Creating a download link, triggering the download, and then removing the link. This function simplifies the process of exporting JSON data as a CSV file for user download.

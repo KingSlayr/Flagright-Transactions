@@ -34,3 +34,10 @@ const GenerateReport = ({ onGenerate }) => {
 };
 
 export default GenerateReport;
+
+
+// The `GenerateReport` component in React provides a user interface for generating a 
+// report based on date criteria. It allows the user to input a start date and an end date, 
+// and when the "Generate Report" button is clicked, it sends this data to a parent component
+//  through the `onGenerate` prop. The component has a straightforward and intuitive interface
+//   for specifying date ranges and initiating report generation within a React application.

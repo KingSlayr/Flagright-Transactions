@@ -40,3 +40,9 @@ const TransactionSort = ({ onSort }) => {
 };
 
 export default TransactionSort;
+
+// The `TransactionSort` component in React provides a user interface for sorting transactions.
+//  It allows users to choose a sorting option (e.g., by date or amount) and a sorting order
+//  (ascending or descending). When the "Apply Sorting" button is clicked, it sends the selected
+//  sorting criteria to a parent component via the `onSort` prop, enabling the sorting of transactions
+//   based on user preferences.
