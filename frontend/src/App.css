@@ -1,0 +1,30 @@
+.App{
+    margin: 0;
+}
+h1{
+    text-align: center;
+}
+input,select{
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #bababa;
+    outline: none;
+}
+
+button{
+    align-self: center;
+    padding: 10px;
+    background-color: white;
+    outline: none;
+    border: 1px solid #bababa;
+    cursor: pointer;
+    font-weight: bold;
+}
+button:hover{
+    background-color: bisque;
+}
+
+label{
+    width: 100%;
+    text-align: start;
+}

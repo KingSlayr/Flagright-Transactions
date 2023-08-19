@@ -1,0 +1,10 @@
+.generateReport{
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+.generateReport>div{
+    display: flex;
+    margin-bottom: 10px;
+}

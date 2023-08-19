@@ -1,0 +1,18 @@
+.dashboard{
+    margin: 0;
+    padding: 0 10vw;
+}
+.dashboard>h2{
+    text-align: center;
+}
+
+.dashboard>div{
+    display: flex;
+}
+
+.dashboard_left{
+    flex: 1;
+}
+.dashboard_left,.dashboard_right{
+    padding: 0 2vw;
+}

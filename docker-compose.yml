@@ -1,0 +1,22 @@
+version: '3'
+services:
+  frontend:
+    image: frontend-image
+    build:
+      context: ./frontend # Path to the frontend directory
+    ports:
+      - "80:3000" # Map port 80 on the host to port 3000 in the container
+    depends_on:
+      - backend
+
+  backend:
+    image: backend-image
+    build:
+      context: ./backend # Path to the backend directory
+    ports:
+      - "8080:8080" # Map port 8080 on the host to port 8080 in the container
+    environment:
+      - NODE_ENV=production
+    # Add any additional environment variables needed by your backend
+
+# Add any network configurations or other settings as needed

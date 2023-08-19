@@ -1,0 +1,32 @@
+.transactionReportResult{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.126);
+}
+
+.transactionReportResult>div{
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 6px 16px 0 rgb(0 0 0 / 20%);
+    position: relative;
+}
+
+.transactionReportResult>div>span{
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: red;
+    padding: 5px;
+    border-radius: 100%;
+    cursor: pointer;
+    width: 25px;
+    height: 25px;
+    text-align: center;
+    color: white;
+}

@@ -1,0 +1,17 @@
+
+.transactionFilter{
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: center;
+}
+
+.transactionFilter label{
+    width: 100%;
+    text-align: start;
+}
+
+.transactionFilter>div{
+    display: flex;
+    margin-bottom: 10px;
+}

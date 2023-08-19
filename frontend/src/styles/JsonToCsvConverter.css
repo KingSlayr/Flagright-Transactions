@@ -1,0 +1,4 @@
+.jsonToCsvConverter{
+    display: flex;
+    flex-direction: column;
+}

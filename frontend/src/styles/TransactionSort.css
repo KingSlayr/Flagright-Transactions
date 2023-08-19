@@ -1,0 +1,10 @@
+.transactionSort{
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+.transactionSort>div{
+    display: flex;
+    margin-bottom: 10px;
+}
