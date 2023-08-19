@@ -3,14 +3,22 @@ import { createTransactionService } from "../services/transactionService.js";
 import { generateTransactionID } from "../utils/generateTransactionId.js";
 
 let cronJob;
+let requestCount = 0;
+const maxRequests = 100;
 
 export const startCronJob = () => {
   cronJob = cron.schedule("*/1 * * * * *", async () => {
+    if (requestCount >= maxRequests) {
+      console.log("Request limit reached. Stopping cron job.");
+      cronJob.stop();
+      return;
+    }
     const newTransaction = {
       transactionID: generateTransactionID(),
       amount: Math.random() * 100,
       description: "Generated Transaction",
     };
+    requestCount++;
     await createTransactionService(newTransaction);
   });
 
