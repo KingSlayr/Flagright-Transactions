@@ -7,7 +7,7 @@ import Transaction from "./models/transaction.js";
 
 import transactionRoutes from "./routes/transactionRoutes.js";
 import authRoutes from "./routes/authRoutes.js";
-
+const PORT = process.env.PORT || 3030;
 const app = express();
 
 app.use(cors());
@@ -22,7 +22,7 @@ mongoose
   .then(async () => {
     console.log("Connected to MongoDB");
     await Transaction.createIndexes();
-    app.listen(3000, () => {
+    app.listen(PORT, () => {
       console.log("Server is running on port 3000");
     });
   })
