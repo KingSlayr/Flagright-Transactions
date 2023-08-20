@@ -1,7 +1,6 @@
 # Flagright-Transactions
 
-![image](https://github.com/KingSlayr/Flagright-Transactions/assets/55028717/a2c86d30-9954-4888-99c1-eb3806369897)
-
+![image](https://github.com/KingSlayr/Flagright-Transactions/assets/55028717/1bf45e97-1a5c-4c2e-b87c-6664d108ed8b)
 
 <h2>API Endpoints</h2>
 
