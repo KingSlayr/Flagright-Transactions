@@ -6,9 +6,10 @@ const TransactionFilter = ({ onFilter }) => {
   const [endDate, setEndDate] = useState("");
   const [minAmount, setMinAmount] = useState("");
   const [maxAmount, setMaxAmount] = useState("");
+  const [description, setdescription] = useState("");
 
   const handleFilter = () => {
-    onFilter({ startDate, endDate, minAmount, maxAmount });
+    onFilter({ startDate, endDate, minAmount, maxAmount, description });
   };
 
   return (
@@ -44,6 +45,14 @@ const TransactionFilter = ({ onFilter }) => {
           type="number"
           value={maxAmount}
           onChange={(e) => setMaxAmount(e.target.value)}
+        />
+      </div>
+      <div>
+        <label>Description:</label>
+        <input
+          type="text"
+          value={description}
+          onChange={(e) => setdescription(e.target.value)}
         />
       </div>
       <button onClick={handleFilter}>Apply Filters</button>

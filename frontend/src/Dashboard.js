@@ -30,6 +30,7 @@ function Dashboard({ JWTtoken }) {
     maxAmount: "",
     sortBy: "dateTime",
     sortOrder: "desc",
+    description: "",
   });
 
   // Handle filter changes
