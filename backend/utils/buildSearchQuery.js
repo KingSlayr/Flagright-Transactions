@@ -9,7 +9,10 @@ const buildSearchQuery = (searchCriteria) => {
     query.amount = { $gte: parseFloat(searchCriteria.minAmount) };
   }
   if (searchCriteria.maxAmount) {
-    query.amount = { $lte: parseFloat(searchCriteria.maxAmount) };
+    query.amount = { 
+      ...query.amount,
+      $lte: parseFloat(searchCriteria.maxAmount) 
+    };
   }
   if (searchCriteria.startDate) {
     query.dateTime = {
@@ -18,13 +21,13 @@ const buildSearchQuery = (searchCriteria) => {
   }
   if (searchCriteria.endDate) {
     query.dateTime = {
+      ...query.dateTime,
       $lte: new Date(convertDateToEndOfDay(searchCriteria.endDate)),
     };
   }
   if (searchCriteria.description) {
     query.description = { $regex: searchCriteria.description, $options: "i" };
   }
-
   return query;
 };
 

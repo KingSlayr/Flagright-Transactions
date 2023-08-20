@@ -23,7 +23,7 @@ mongoose
     console.log("Connected to MongoDB");
     await Transaction.createIndexes();
     app.listen(PORT, () => {
-      console.log("Server is running on port 3000");
+      console.log("Server is running on port ",PORT);
     });
   })
   .catch((err) => console.error("Error connecting to MongoDB:", err));

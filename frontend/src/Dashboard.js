@@ -15,6 +15,7 @@ import TransactionReportResult from "./components/TransactionReportResult";
 import JsonToCsvConverter from "./components/JsonToCsvConverter";
 
 function Dashboard({ JWTtoken }) {
+  const [tableLoading, settableLoading] = useState(false);
   const [transactions, setTransactions] = useState([]);
   const [totalPage, settotalPage] = useState(0);
   const [currentPage, setcurrentPage] = useState(0);
@@ -68,33 +69,57 @@ function Dashboard({ JWTtoken }) {
   };
 
   useEffect(() => {
-    getTransactions(JWTtoken, filters).then((res) => {
-      setTransactions(res?.transactions);
-      settotalPage(res?.totalPages);
-      setcurrentPage(res?.currentPage);
-    });
+    settableLoading(true);
+    getTransactions(JWTtoken, filters)
+      .then((res) => {
+        setTransactions(res?.transactions);
+        settotalPage(res?.totalPages);
+        setcurrentPage(res?.currentPage);
+        settableLoading(false);
+      })
+      .catch((err) => {
+        settableLoading(false);
+      });
   }, []);
 
   useEffect(() => {
-    getTransactions(JWTtoken, filters, currentPage).then((res) => {
-      setTransactions(res?.transactions);
-    });
+    settableLoading(true);
+    getTransactions(JWTtoken, filters, currentPage)
+      .then((res) => {
+        setTransactions(res?.transactions);
+        settableLoading(false);
+      })
+      .catch((err) => {
+        settableLoading(false);
+      });
   }, [currentPage, filters]);
 
   useEffect(() => {
-    getTransactions(JWTtoken, filters).then((res) => {
-      setTransactions(res?.transactions);
-      settotalPage(res?.totalPages);
-      setcurrentPage(res?.currentPage);
-    });
+    settableLoading(true);
+    getTransactions(JWTtoken, filters)
+      .then((res) => {
+        setTransactions(res?.transactions);
+        settotalPage(res?.totalPages);
+        setcurrentPage(res?.currentPage);
+        settableLoading(false);
+      })
+      .catch((err) => {
+        settableLoading(false);
+      });
   }, [filters]);
 
   useEffect(() => {
     if (reportDuration) {
-      generateReport(JWTtoken, reportDuration).then((res) => {
-        settransactionReport(res);
-        setshowtransactionReport(true);
-      });
+      settableLoading(true);
+      generateReport(JWTtoken, reportDuration)
+        .then((res) => {
+          settransactionReport(res);
+          setshowtransactionReport(true);
+          settableLoading(false);
+        })
+        .catch((err) => {
+          settableLoading(false);
+        });
     }
   }, [reportDuration]);
 
@@ -115,6 +140,7 @@ function Dashboard({ JWTtoken }) {
       <div>
         <div className="dashboard_left">
           <TransactionList
+            tableLoading={tableLoading}
             transactions={transactions}
             totalPage={totalPage}
             currentPage={currentPage}

@@ -1,12 +1,14 @@
 import React from "react";
 import "../styles/TransactionList.css";
 import { convertISOToHumanReadable } from "../convertISOToHumanReadable";
+import loader from "../loader.gif";
 
-const TransactionList = ({ transactions, onPage, currentPage, totalPage }) => {
+const TransactionList = ({ transactions, onPage, currentPage, totalPage,tableLoading }) => {
   return (
     <div className="transactionList">
       <h2>Transaction List</h2>
       <table>
+        {tableLoading&&<div className="tableLoading"><img src={loader}/></div>}
         <thead>
           <tr>
             <th>Date</th>
