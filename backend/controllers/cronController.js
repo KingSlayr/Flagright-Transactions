@@ -6,7 +6,7 @@ let cronJob;
 
 export const startCronJob = () => {
   let requestCount = 0;
-  const maxRequests = 100;
+  const maxRequests = 10;
 
   cronJob = cron.schedule("*/1 * * * * *", async () => {
     if (requestCount >= maxRequests) {
