@@ -3,10 +3,10 @@ import { createTransactionService } from "../services/transactionService.js";
 import { generateTransactionID } from "../utils/generateTransactionId.js";
 
 let cronJob;
-let requestCount = 0;
-const maxRequests = 10;
 
 export const startCronJob = () => {
+  let requestCount = 0;
+  const maxRequests = 10;
 
   cronJob = cron.schedule("*/1 * * * * *", async () => {
     if (requestCount >= maxRequests) {
