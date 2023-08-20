@@ -6,12 +6,12 @@ let cronJob;
 
 export const startCronJob = () => {
   let requestCount = 0;
-  const maxRequests = 10;
+  const maxRequests = 50;
 
   cronJob = cron.schedule("*/1 * * * * *", async () => {
     if (requestCount >= maxRequests) {
       console.log("Request limit reached. Stopping cron job.");
-      stopCronJob();
+      cronJob.stop();
       return;
     }
     const newTransaction = {
