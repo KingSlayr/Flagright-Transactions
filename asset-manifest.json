@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/Flagright-Transactions/static/css/main.f52be1ca.css",
+    "main.js": "/Flagright-Transactions/static/js/main.a884e7c9.js",
+    "static/js/787.cda612ba.chunk.js": "/Flagright-Transactions/static/js/787.cda612ba.chunk.js",
+    "static/media/loader.gif": "/Flagright-Transactions/static/media/loader.a1a996746e5e48352c81.gif",
+    "index.html": "/Flagright-Transactions/index.html",
+    "main.f52be1ca.css.map": "/Flagright-Transactions/static/css/main.f52be1ca.css.map",
+    "main.a884e7c9.js.map": "/Flagright-Transactions/static/js/main.a884e7c9.js.map",
+    "787.cda612ba.chunk.js.map": "/Flagright-Transactions/static/js/787.cda612ba.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f52be1ca.css",
+    "static/js/main.a884e7c9.js"
+  ]
+}
