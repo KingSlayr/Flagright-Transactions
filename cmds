@@ -1,0 +1,17 @@
+database :
+	sudo systemctl start mongod
+	sudo java -Djava.library.path=./DynamoDBLocal_lib -jar DynamoDBLocal.jar -sharedDb
+	sudo lsof -i :8000
+
+tarpon :
+	nvm use
+	npm install
+	npm run aws-sso-login:dev
+	npm run build
+	npm run dev:databases:init //optional
+	npm run dev:api
+
+phytoplankto :
+	nvm use
+	yarn
+	yarn dev
