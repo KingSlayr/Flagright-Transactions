@@ -11,7 +11,8 @@ tarpon :
 	npm run dev:databases:init //optional
 	npm run dev:api
 
-phytoplankton :
+phytoplankto :
+	echo '127.0.0.1	flagright.local' | sudo tee -a '/etc/hosts'  // one time
 	nvm use
 	yarn
 	yarn dev
