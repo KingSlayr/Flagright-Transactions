@@ -11,7 +11,7 @@ tarpon :
 	npm run dev:databases:init //optional
 	npm run dev:api
 
-phytoplankto :
+phytoplankton :
 	nvm use
 	yarn
 	yarn dev
